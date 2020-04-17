@@ -42,7 +42,7 @@ var corsOptions = {
 
 app.options("/ike-mail", cors(corsOptions));
 //cors(corsOptions)
-app.post("/ike-mail", cors(), (req, res) => {
+app.post("/ike-mail", cors(corsOptions), (req, res) => {
   console.info("POST /ike-mail");
 
   //info@ikeasistencia.com
