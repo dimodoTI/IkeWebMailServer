@@ -47,11 +47,10 @@ app.post("/ike-mail", cors(), (req, res) => {
 
   //info@ikeasistencia.com
   const msg = {
-    to: "info@ikeasistencia.com",
+    to: "formularioweb@ikeasistencia.com.ar",
     from: "Ikewebargentina@gmail.com",
     subject: "Consulta de: " + req.body.nombre,
-    html:
-      "<p>" +
+    html: "<p>" +
       req.body.comentario +
       "</p>" +
       "<p></p>" +
