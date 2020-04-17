@@ -2,11 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(
-  "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"
-);
+sgMail.setApiKey(process.env.SG_KEY);
 
 /* -------------------------------------------------------------------------- */
 app.use(
