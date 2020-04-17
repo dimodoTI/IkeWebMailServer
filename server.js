@@ -36,11 +36,11 @@ app.get("/simple-cors", cors(), (req, res) => {
   });
 });
 var corsOptions = {
-  origin: "http://localhost:8080",
+  origin: "http://www.ikeargentina.com.ar",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.options("/ike-mail", cors());
+app.options("/ike-mail", cors(corsOptions));
 //cors(corsOptions)
 app.post("/ike-mail", cors(), (req, res) => {
   console.info("POST /ike-mail");
