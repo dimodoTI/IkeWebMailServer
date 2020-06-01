@@ -62,6 +62,14 @@ app.post("/ike-mail", cors(corsOptions), (req, res) => {
   };
   sgMail.send(msg);
 
+  const msg = {
+    to: req.body.email,
+    from: "Ikewebargentina@gmail.com",
+    subject: "Asunto: Iké Argentina - Tu consulta ya esta siendo procesada",
+    html: "<p style='font-size:18px'>Gracias por contactarte a Iké Argentina, tu consulta esta siendo procesada y en breve estaremos brindandote una respuesta.</p>    <p>Atte</p>    <p><b>Equipo de Atención al Cliente</b></p>    <b>Iké Argentina</b>",
+  };
+  sgMail.send(msg);
+
   res.json({
     text: "Simple CORS requests are working. [POST]",
   });
